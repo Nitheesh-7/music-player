@@ -1,0 +1,158 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Borel', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Edu SA Beginner', cursive;
+font-family: 'Mukta', sans-serif;
+font-family: 'REM', sans-serif;
+}
+body{
+    background-color: #BBC4F0;
+    
+}
+#container{
+    width: 300px;
+    height: 550px;
+    border: 0px solid;
+    background-image: linear-gradient(white,  black 30%,   royalblue );
+    margin-top: 150px;
+    margin-left: 550px;
+    padding: 15px;
+    border-radius: 10px;
+    
+}
+
+img{
+    width: 100%;
+    height: 300px;
+    border-radius: 7px;
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+h2{
+    text-align: center ;
+    color: whitesmoke;
+    /* font-weight: bolder; */
+}
+h3{
+    text-align: center;
+    color: whitesmoke;
+    /* font-weight: bolder; */
+    font-size: 15px;
+}
+h2, h3{
+    margin-top: 10px;
+}
+#icons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+#durationbar{
+    width: 100%;
+    height: 3px;
+    background-color: whitesmoke;
+    margin-top: 15px;
+}
+#progressbar{
+    width: 0%;
+    background-color: black;
+    height: 3px;
+}
+#time{
+    margin-top: 5px;
+    /* color: #161b57; */
+    display: flex;
+    justify-content: space-between;
+    /* font-weight: 100; */
+    font-size: 14px;
+}
+#musicbars{
+     width: 100%;
+    height: 50px;
+    /* border: 2px solid black ;  */
+    display: flex;
+    /* background-color: white; */
+    /* margin-left: 300px; */
+    margin-top: 50px;
+    margin-bottom: 0px;
+
+}
+#one, #two, #three, #four, #five, #six , #seven, #eight, #nine{
+    width: 5px;
+    height: 50%;
+    margin-right: 5px;
+    background-image: linear-gradient(white 10% , black  30% , royalblue );
+    transform: scaleY();
+    animation-name: musicbars;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: ease;
+    border-radius: 3px;
+}
+
+/* #one{
+    transform: scaleY();
+    animation-name: musicbars;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: ease;
+} */
+
+@keyframes musicbars {
+
+ 0%{
+    transform: scaleY(0.3);
+ }
+ 20%{
+    transform: scaleY(1);
+ }
+ 40%{
+    transform: scaleY(0.3);
+ }
+ 75%{
+    transform: scaleY(0.75);
+ }
+ 100%{
+    transform: scaleY(0.6);
+ }}
+
+ #one{
+    animation-delay:0.3s ;
+ }
+ #two{
+    animation-delay: 0.2s ;
+ }
+ #three{
+    animation-delay: -1.6s ;
+ }
+ #four{
+    animation-delay: -0.5s;
+ }
+ #five{
+    animation-delay: 0.4s;
+ }
+ #six{
+    animation-delay: 1.2s;
+ }
+ #seven{
+    animation-delay:-1s ;
+ }
+ #eight{
+    animation-delay: -0.5s;
+ }
+ #nine{
+    animation-delay: 1s;
+ }
+
+ 
+ 
+ 
+ 

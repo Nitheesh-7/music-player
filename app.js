@@ -30,6 +30,7 @@ playButton.addEventListener("click" ,() =>
     }
 })
 
+
 const songsData = [
 
 
@@ -70,6 +71,7 @@ function loadSongs(info)
 let songPosition = -1
 forwardButton.addEventListener("click", () =>{
     songPosition++
+    likeButton.classList.replace("fa-solid","fa-regular")
     if(songPosition > songsData.length - 1){
         songPosition = 0
     }
@@ -89,6 +91,7 @@ forwardButton.addEventListener("click", () =>{
 previousButton.addEventListener("click", () =>
 {
    songPosition--
+   likeButton.classList.replace("fa-solid","fa-regular")
    if(songPosition < 0)
    {
     songPosition = songsData.length - 1
@@ -101,6 +104,24 @@ previousButton.addEventListener("click", () =>
 const progressBar = document.querySelector("#progressbar")
 const totalDuration = document.querySelector("#duration")
 const runningTime = document.querySelector("#currenttime")
+const myDurationBar = document.querySelector("#durationbar")
+
+myDurationBar.addEventListener("click" , function(event)
+{
+  
+   let clickedWidth = event.offsetX
+   let totalWidth = event.srcElement.offsetWidth
+   
+  let progressBarPercentage = (clickedWidth / totalWidth) * 100
+   // console.log(clickedWidth , totalWidth)
+   progressBar.style.width = `${progressBarPercentage}%`
+   // console.log(progressBarPercentage)
+
+    let currentClickedTime = (clickedWidth / totalWidth) * audioFile.duration 
+   //  console.log(currentClickedTime)
+    audioFile.currentTime = currentClickedTime
+    console.log(currentClickedTime)
+})
 
 audioFile.addEventListener("timeupdate", function(event)
 {
@@ -143,7 +164,41 @@ audioFile.addEventListener("timeupdate", function(event)
     // console.log(myDuration)
     // console.log(audioPercentage)
 })
+ let likeButton =  document.querySelector("#heart")
+ let isMusicAlreadyLiked = false
 
+
+likeButton.addEventListener("click", () =>{
+    
+         likeButton.classList.replace("fa-regular","fa-solid")
+         localStorage.setItem(AlbumName.textContent, SingerName.textContent)
+         
+} )
+likeButton.addEventListener("dblclick", () =>{
+    likeButton.classList.replace("fa-solid","fa-regular")
+    localStorage.removeItem(AlbumName.textContent, SingerName.textContent)
+})
+let shuffleSongs = document.querySelector("#shuffle")
+
+// let shufflePosition = Math.floor(Math.random() * songsData.length )
+// console.log(shufflePosition)
+
+shuffleSongs.addEventListener("click", () =>{
+    let shufflePosition = Math.floor(Math.random() * (songsData.length ) )
+    // console.log(shufflePosition)
+    let currentSong =   loadSongs(songsData[shufflePosition])
+    //  console.log(currentSong)
+     pauseAudio()
+     likeButton.classList.replace("fa-solid","fa-regular")
+})
+
+// let isMusicAlreadyLiked = false
+// if(isMusicAlreadyLiked  = true){
+//    likeButton.classList.replace("fa-solid","fa-regular")
+// }
+// else{
+//     likeButton.classList.replace("fa-regular","fa-solid")
+// }
 
 
 

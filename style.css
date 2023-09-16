@@ -48,7 +48,7 @@ h2, h3{
 }
 #icons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 10px;
     margin-top: 20px;
     font-size: 25px;
@@ -58,6 +58,7 @@ h2, h3{
     height: 3px;
     background-color: whitesmoke;
     margin-top: 15px;
+    cursor: pointer;
 }
 #progressbar{
     width: 0%;
